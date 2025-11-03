@@ -28,3 +28,27 @@ Toast("Download Done");
 setTimeout(() => {
     Toast("The another Notification");
 }, 2000);
+
+// this keyword 
+// this keyword in global scope
+console.log(this); 
+
+// this keyword in function 
+function abc(){
+    console.log(this);
+}
+abc();
+
+//  this keyword in  method
+let obj = {
+    name : "kk",
+    sayName : function(){
+        console.log(this.name);
+    },
+};
+obj.sayName();
+
+// this keyword in event handler
+document.querySelector('h1').addEventListener("click",function(){
+    console.log(this); 
+})
