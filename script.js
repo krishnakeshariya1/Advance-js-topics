@@ -140,7 +140,7 @@ const userManager = {
         this.renderUi();
     },
     renderUi: function () {
-         document.querySelector("#parentDiv").innerHTML = "";
+        document.querySelector("#parentDiv").innerHTML = ""; // Clear existing UI
         this.users.forEach( function(user){
             // Create main container div
             const card = document.createElement("div");
@@ -182,6 +182,6 @@ const userManager = {
 
         });
     },
-    removeUser: function () { },
+    removeUser: function () {},
 }
 userManager.init()
