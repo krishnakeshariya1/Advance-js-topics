@@ -84,3 +84,33 @@ const obj2 = {
     }
 }
 obj2.say();
+
+// call apply bind
+// while calling function we can set the value of this keyword 
+let obj3 = {
+    name : "kk",
+    age : 22,
+}
+function hii(a,b,c){
+    console.log(this, a , b, c);
+}
+hii.call(obj3, 1, 2,3); // we can pass more than 2 parameter 
+
+let obj4 = {
+    name : "kk",
+    age : 22,
+}
+function hii1(a,b,c){
+    console.log(this, a , b, c);
+}
+hii1.apply(obj4, [1,2,3]) // it pass value in array
+
+let obj5 = {
+    name : "kk",
+    age : 22,
+}
+function hii2(a,b,c){
+    console.log(this, a , b, c);
+}
+let fnc = hii2.bind(obj5 ,1,2,3) // bind does not run but it pass the dublicate of that function where this is a obj
+fnc(); 
