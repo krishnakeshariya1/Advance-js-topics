@@ -63,3 +63,24 @@ constructor (){
 }
 let val = new Abc(); // new will make a blank obj
 // val is a instance of abc class
+
+const objj ={
+    name : "krishna",
+    age :20,
+    sayHlw : ()=>{
+        console.log(this) // window
+    }
+}
+objj.sayHlw();
+
+const obj2 = {
+    name : "kk",
+    age : 29,
+    say : function (){
+        let sayName = ()=>{
+            console.log(this) // object
+        }
+        sayName()
+    }
+}
+obj2.say();
