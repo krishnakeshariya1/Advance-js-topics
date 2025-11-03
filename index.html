@@ -10,6 +10,32 @@
     <div class="p-10 flex flex-col  gap-5 " id="parent">
     </div>
     <h1 class="text-white">Click Me</h1>
+
+    <form id="profileForm" class="bg-white/5 p-6 rounded-lg max-w-lg mx-auto text-white flex flex-col gap-4" novalidate>
+        <label class="flex flex-col gap-1">
+            <span class="text-sm text-gray-300">Name</span>
+            <input name="name" type="text" required placeholder="Full name" class="mt-1 p-2 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </label>
+
+        <label class="flex flex-col gap-1">
+            <span class="text-sm text-gray-300">Role</span>
+            <input name="role" type="text" required placeholder="e.g. Frontend Developer" class="mt-1 p-2 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </label>
+
+        <label class="flex flex-col gap-1">
+            <span class="text-sm text-gray-300">Bio</span>
+            <textarea name="bio" rows="4" placeholder="Short bio" class="mt-1 p-2 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </label>
+
+        <label class="flex flex-col gap-1">
+            <span class="text-sm text-gray-300">Photo URL</span>
+            <input name="photo" type="url" placeholder="https://example.com/photo.jpg" class="mt-1 p-2 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </label>
+
+        <button type="submit" class="mt-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded text-white font-medium">Submit</button>
+    </form>
+
+    
     <script src="script.js"></script>
 </body>
 </html>
