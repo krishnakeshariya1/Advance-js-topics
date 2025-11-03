@@ -52,3 +52,14 @@ obj.sayName();
 document.querySelector('h1').addEventListener("click",function(){
     console.log(this); 
 })
+
+// this keyword in classes
+
+class Abc{ // first letter of class name should be captial 
+constructor (){
+    console.log(`hey`);
+    this.a = 122;
+}
+}
+let val = new Abc(); // new will make a blank obj
+// val is a instance of abc class
