@@ -186,10 +186,11 @@ const userManager = {
 userManager.init()
 
 // Object oriented programming 
-function Createpencil(color, length, brand, price){
+
+// it is a constructor function
+function Createpencil(color, length,  price){
     this.color = color;
     this.length =length;
-    this.brand = brand;
     this.price = price;
     this.write = function(text){
         let h1 =document.createElement('h1');
@@ -199,8 +200,29 @@ function Createpencil(color, length, brand, price){
         return;
     }
 }
-const p1 = new Createpencil("pink", "5cm", "natraj", 5);
-const p2 = new Createpencil("skyblue", "7cm", "doms", 10);
+const p1 = new Createpencil("pink", "5cm", 5);
+const p2 = new Createpencil("skyblue", "7cm",  10);
 p1.write("hlw");
 p2.write("Hey");
-// it is a constructor function 
+ 
+Createpencil.prototype.company = "natraj";
+// if we want to add a same property to every instance we can use prototype // it share the property with instance [memory efficient]
+
+//classes
+class Createperson{
+    constructor(name, gender, course, age){  // the work of constructor is to set default values , initialize , creating value
+        this.name = name;
+        this.gender = gender;
+        this.course = course;
+        this.age = age;
+    }
+    personDetail(){
+        let h1 = document.createElement('h1');
+        h1.textContent = `Hi, My name is ${this.name} i'm ${this.age} year old , pursuing ${this.course} `;
+        h1.style.color = "white"
+        document.body.append(h1)
+    }
+}
+const person1 =new Createperson("krishna", "male", "BCA",20);
+const person2 =new Createperson("Amrita", "female", "11th",17);
+person1.personDetail();
