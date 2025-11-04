@@ -182,6 +182,25 @@ const userManager = {
 
         });
     },
-    removeUser: function () {},
 }
 userManager.init()
+
+// Object oriented programming 
+function Createpencil(color, length, brand, price){
+    this.color = color;
+    this.length =length;
+    this.brand = brand;
+    this.price = price;
+    this.write = function(text){
+        let h1 =document.createElement('h1');
+        h1.textContent = text;
+        h1.style.color = color;
+        document.body.appendChild(h1)
+        return;
+    }
+}
+const p1 = new Createpencil("pink", "5cm", "natraj", 5);
+const p2 = new Createpencil("skyblue", "7cm", "doms", 10);
+p1.write("hlw");
+p2.write("Hey");
+// it is a constructor function 
