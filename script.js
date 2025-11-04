@@ -226,3 +226,14 @@ class Createperson{
 const person1 =new Createperson("krishna", "male", "BCA",20);
 const person2 =new Createperson("Amrita", "female", "11th",17);
 person1.personDetail();
+class Admin extends Createperson{ // extends allow child class to acess all methods and properties of parent class
+    constructor(name, gender, course, age, role){
+        super(name, gender, course, age);
+        this.role = "Admin";
+    }
+    role(){
+        console.log("You are a :-", role);
+    }
+}
+const admin1 = new Admin("krishna", "male","Bca",20,);
+
