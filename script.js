@@ -237,3 +237,15 @@ class Admin extends Createperson{ // extends allow child class to acess all meth
 }
 const admin1 = new Admin("krishna", "male","Bca",20,);
 
+// prototypal inharitance = object -> object inheritance
+let coffee ={
+    color : "dark",
+    drink : function(){
+        console.log("gut gut gut");
+    }
+}
+const arabiataCoffee = Object.create(coffee);
+console.log(arabiataCoffee);
+arabiataCoffee.taste = "bitter";
+arabiataCoffee.drink();
+// we can inherit the all properties of a object to the another object..
