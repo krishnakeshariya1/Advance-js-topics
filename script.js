@@ -249,3 +249,46 @@ console.log(arabiataCoffee);
 arabiataCoffee.taste = "bitter";
 arabiataCoffee.drink();
 // we can inherit the all properties of a object to the another object..
+
+
+// callback 
+function kuchDerBaadChalega(fnc){
+    setTimeout(fnc,Math.floor(Math.random()*10)*1000);
+}
+kuchDerBaadChalega(function(){
+    console.log("Hey");
+})
+
+//callback hell
+function profileLekerAao(username, cb){
+    console.log(`Fetching profile data...`)
+    setTimeout(()=>{
+       console.log(`profile fetched of ${username}`);
+       cb({username ,age :20,_id : 224755});
+    },2000)
+}
+function sarePostLekerAao(id,cb){
+    console.log(`fetching posts...`)
+    setTimeout(()=>{
+        cb({
+            _id : id,
+            posts : ["p1","p2","p3"],
+        });
+    })
+}
+function savedPostNikalo(id , cb){
+    console.log(`Fetching saved posts`);
+    setTimeout(()=>{
+        cb({_id: id , savedPost : ["s1","s2","s3"]})
+    },3000)
+}
+
+profileLekerAao("Krishna",function(profileData){
+    console.log(profileData)
+    sarePostLekerAao(profileData._id ,function(posts){
+        console.log(posts)
+        savedPostNikalo(profileData._id, function(saved){
+            console.log(saved);
+        })
+    })
+})
