@@ -292,3 +292,17 @@ profileLekerAao("Krishna",function(profileData){
         })
     })
 })
+
+//promises
+let pr = new Promise(function(resolve, reject){
+    setTimeout(()=>{
+        let random = Math.floor(Math.random()*10);
+        (random >5) ? resolve(`Resolved with ${random}`) : reject(`Rejected with ${random}`);
+    },2000)
+})
+pr.then(function(val){
+    console.log(val);
+});
+pr.catch(function(val){
+    console.log(val);
+});
