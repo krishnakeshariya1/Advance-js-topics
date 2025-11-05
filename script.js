@@ -298,11 +298,20 @@ let pr = new Promise(function(resolve, reject){
     setTimeout(()=>{
         let random = Math.floor(Math.random()*10);
         (random >5) ? resolve(`Resolved with ${random}`) : reject(`Rejected with ${random}`);
-    },2000)
+    },1000)
 })
-pr.then(function(val){
-    console.log(val);
-});
-pr.catch(function(val){
-    console.log(val);
-});
+// pr.then(function(val){
+//     console.log(val);
+// });
+// pr.catch(function(val){
+//     console.log(val);
+// });
+async function state() {
+    try {
+        let val = await pr;
+        console.log(val)
+    } catch (error) {
+        console.log(error);
+    }
+}
+state();
